@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Habit Rabbit</string>
+    <string name="title_createHabit">Create Habit </string>
+    <string name="title_progress">Progress</string>
+    <string name="title_profile">Profile</string>
+    <string name="habits">Habits</string>
+</resources>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/exit_habit_icon"
+                android:paddingLeft="20dp"
+                android:paddingRight="275dp" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/edit_habit_icon"
+                android:paddingRight="15dp"/>
+        </TableRow>
+
+        <RelativeLayout
+            android:id="@+id/habit4"
+            style="@style/Widget.AppCompat.Button"
+
+            android:layout_width="373dp"
+            android:layout_height="166dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="10dp"
+
+
+            android:background="@drawable/button_background"
+
+
+            android:shadowColor="#283A3838"
+
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="20sp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="95dp"
+                android:layout_marginRight="95dp"
+                android:text="Drink Water"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="212dp"
+                android:layout_height="17dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="87dp"
+                android:layout_marginLeft="-60dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="64dp"
+                android:layout_marginRight="64dp"
+                android:layout_marginBottom="89dp"
+                android:text="Stay hydrated throughout the day" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/title"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="3dp"
+                android:layout_marginLeft="-48dp"
+                android:layout_marginTop="40dp"
+                android:text="February 28, 2020" />
+
+            <TextView
+                android:id="@+id/shared"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/desc"
+                android:layout_alignLeft="@+id/desc"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="-88dp"
+                android:layout_marginLeft="-88dp"
+                android:layout_marginTop="138dp"
+                android:text="Shared with" />
+
+            <TextView
+                android:id="@+id/user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="3dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginBottom="9dp"
+                android:layout_toEndOf="@+id/shared"
+                android:layout_toRightOf="@+id/shared"
+                android:text="Ryan"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/habit5"
+            style="@style/Widget.AppCompat.Button"
+
+            android:layout_width="373dp"
+            android:layout_height="324dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="10dp"
+
+
+            android:background="@drawable/button_background"
+
+
+            android:shadowColor="#283A3838"
+
+            android:textAllCaps="false"
+
+            android:textColor="#000000"
+            android:textSize="20sp">
+
+            <TextView
+                android:id="@+id/percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="29dp"
+                android:layout_marginTop="0dp"
+                android:text="75%"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/checkin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="137dp"
+                android:layout_marginBottom="270dp"
+                android:background="#FFA828"
+                android:shadowColor="#FFFFFF"
+                android:text="Check In"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/hasChecked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="9dp"
+                android:layout_marginRight="9dp"
+                android:layout_marginBottom="245dp"
+                android:text="has checked in" />
+
+            <TextView
+                android:id="@+id/user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="107dp"
+                android:layout_marginRight="107dp"
+                android:layout_marginBottom="245dp"
+                android:text="Ryan"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

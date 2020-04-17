@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize">
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu"
+
+        />
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/mobile_navigation" />
+
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/habits"
+            android:textColor="#000000"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+
+        <RelativeLayout
+            android:id="@+id/habit1"
+            style="@style/Widget.AppCompat.Button"
+
+            android:layout_width="373dp"
+            android:layout_height="79dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="10dp"
+
+
+            android:background="@drawable/button_background"
+
+
+            android:shadowColor="#283A3838"
+
+            android:text="Stay hydrated"
+            android:textAllCaps="false"
+
+            android:textColor="#000000"
+            android:textSize="20sp">
+
+            <TextView
+                android:id="@+id/habit1Text"
+                android:layout_width="268dp"
+                android:layout_height="23dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toStartOf="@+id/habit1Percentage"
+                android:layout_toLeftOf="@+id/habit1Percentage"
+                android:text="Stay hydrated"
+
+                android:textColor="#000000"
+
+
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/habit1Percentage"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="14dp"
+                android:layout_marginBottom="10dp"
+                android:text="75%"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/habit2"
+            style="@style/Widget.AppCompat.Button"
+
+            android:layout_width="373dp"
+            android:layout_height="79dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="10dp"
+
+
+            android:background="@drawable/button_background"
+
+
+            android:shadowColor="#283A3838"
+            android:textAllCaps="false"
+
+            android:textColor="#000000"
+            android:textSize="20sp">
+
+            <TextView
+                android:id="@+id/habit2Text"
+                android:layout_width="268dp"
+                android:layout_height="23dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toStartOf="@+id/habit2Percentage"
+                android:layout_toLeftOf="@+id/habit2Percentage"
+                android:text="Run a mile every day"
+
+                android:textColor="#000000"
+
+
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/habit2Percentage"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="14dp"
+                android:layout_marginBottom="10dp"
+                android:text="25%"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/habit3"
+            style="@style/Widget.AppCompat.Button"
+
+            android:layout_width="373dp"
+            android:layout_height="79dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="10dp"
+
+
+            android:background="@drawable/button_background"
+
+
+            android:shadowColor="#283A3838"
+
+            android:textAllCaps="false"
+
+            android:textColor="#000000"
+            android:textSize="20sp">
+
+            <TextView
+                android:id="@+id/habit3Text"
+                android:layout_width="268dp"
+                android:layout_height="23dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toStartOf="@+id/habit3Percentage"
+                android:layout_toLeftOf="@+id/habit3Percentage"
+                android:text="Eat more greens"
+
+                android:textColor="#000000"
+
+
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/habit3Percentage"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="14dp"
+                android:layout_marginBottom="10dp"
+                android:text="55%"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/habit4"
+            style="@style/Widget.AppCompat.Button"
+
+            android:layout_width="373dp"
+            android:layout_height="79dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="10dp"
+
+
+            android:background="@drawable/button_background"
+
+
+            android:shadowColor="#283A3838"
+
+            android:textAllCaps="false"
+
+            android:textColor="#000000"
+            android:textSize="20sp">
+
+            <TextView
+                android:id="@+id/habit4Text"
+                android:layout_width="268dp"
+                android:layout_height="23dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toStartOf="@+id/habit4Percentage"
+                android:layout_toLeftOf="@+id/habit4Percentage"
+                android:text="Study for CMSC434"
+
+                android:textColor="#000000"
+
+
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/habit4Percentage"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="14dp"
+                android:layout_marginBottom="10dp"
+                android:text="85%"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/habit5"
+            style="@style/Widget.AppCompat.Button"
+
+            android:layout_width="373dp"
+            android:layout_height="79dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="10dp"
+
+
+            android:background="@drawable/button_background"
+
+
+            android:shadowColor="#283A3838"
+
+            android:textAllCaps="false"
+
+            android:textColor="#000000"
+            android:textSize="20sp">
+
+            <TextView
+                android:id="@+id/habit5Text"
+                android:layout_width="268dp"
+                android:layout_height="23dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toStartOf="@+id/habit5Percentage"
+                android:layout_toLeftOf="@+id/habit5Percentage"
+                android:text="Get 8 hours of sleep"
+
+                android:textColor="#000000"
+
+
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/habit5Percentage"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="14dp"
+                android:layout_marginBottom="10dp"
+                android:text="40%"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

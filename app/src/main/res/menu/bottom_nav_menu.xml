@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_createTask"
+        android:icon="@drawable/create_task_icon"
+        android:title="@string/title_createHabit" />
+
+    <item
+        android:id="@+id/navigation_progress"
+        android:icon="@drawable/progress_icon"
+        android:title="@string/title_progress" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/profile_icon"
+        android:title="@string/title_profile" />
+
+</menu>
