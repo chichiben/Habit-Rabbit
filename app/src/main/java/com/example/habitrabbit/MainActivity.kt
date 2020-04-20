@@ -1,6 +1,7 @@
 package com.example.habitrabbit
 
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.Window
 import android.view.WindowManager
 import android.widget.RelativeLayout
@@ -19,7 +20,6 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
-
         val navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -30,9 +30,32 @@ class MainActivity : AppCompatActivity() {
         )
         navView.setupWithNavController(navController)
 
+        // Setting listener for button press on the first habit.
         val habitButton = findViewById<RelativeLayout>(R.id.habit1)
         habitButton.setOnClickListener{
             setContentView(R.layout.fragment_habit)
+        }
+
+        // Setting listeners for the bottom nav panel.
+        navView.setOnNavigationItemSelectedListener { item: MenuItem ->
+            return@setOnNavigationItemSelectedListener when (item.itemId) {
+                R.id.navigation_createTask -> {
+                    println(("Create Task"));
+                    // setContentView(VIEW HERE)
+                    true
+                }
+                R.id.navigation_progress -> {
+                    println(("Progress"));
+                    // setContentView(VIEW HERE)
+                    true
+                }
+                R.id.navigation_profile -> {
+                    println(("Profile"));
+                    // setContentView(VIEW HERE)
+                    true
+                }
+                else -> false
+            }
         }
     }
 }
