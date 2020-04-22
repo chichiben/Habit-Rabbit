@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize">
+    android:layout_height="match_parent">
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -53,9 +52,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
             android:text="@string/habits"
-            android:textColor="#000000"
+            android:textColor="#3C3C3C"
             android:textSize="50sp"
             android:textStyle="bold" />
 
@@ -99,7 +99,7 @@
                 android:layout_toLeftOf="@+id/habit1Percentage"
                 android:text="Stay hydrated"
 
-                android:textColor="#000000"
+                android:textColor="#3C3C3C"
 
 
                 android:textSize="20sp"
@@ -117,7 +117,7 @@
                 android:layout_marginRight="14dp"
                 android:layout_marginBottom="10dp"
                 android:text="75%"
-                android:textColor="#000000"
+                android:textColor="#3C3C3C"
                 android:textSize="40sp"
                 android:textStyle="bold" />
 
@@ -160,7 +160,7 @@
                 android:layout_toLeftOf="@+id/habit2Percentage"
                 android:text="Run a mile every day"
 
-                android:textColor="#000000"
+                android:textColor="#3C3C3C"
 
 
                 android:textSize="20sp"
@@ -178,7 +178,7 @@
                 android:layout_marginRight="14dp"
                 android:layout_marginBottom="10dp"
                 android:text="25%"
-                android:textColor="#000000"
+                android:textColor="#3C3C3C"
                 android:textSize="40sp"
                 android:textStyle="bold" />
 
@@ -222,7 +222,7 @@
                 android:layout_toLeftOf="@+id/habit3Percentage"
                 android:text="Eat more greens"
 
-                android:textColor="#000000"
+                android:textColor="#3C3C3C"
 
 
                 android:textSize="20sp"
@@ -240,7 +240,7 @@
                 android:layout_marginRight="14dp"
                 android:layout_marginBottom="10dp"
                 android:text="55%"
-                android:textColor="#000000"
+                android:textColor="#3C3C3C"
                 android:textSize="40sp"
                 android:textStyle="bold" />
 
@@ -264,7 +264,7 @@
 
             android:textAllCaps="false"
 
-            android:textColor="#000000"
+            android:textColor="#3C3C3C"
             android:textSize="20sp">
 
             <TextView
@@ -284,7 +284,7 @@
                 android:layout_toLeftOf="@+id/habit4Percentage"
                 android:text="Study for CMSC434"
 
-                android:textColor="#000000"
+                android:textColor="#3C3C3C"
 
 
                 android:textSize="20sp"
@@ -302,7 +302,7 @@
                 android:layout_marginRight="14dp"
                 android:layout_marginBottom="10dp"
                 android:text="85%"
-                android:textColor="#000000"
+                android:textColor="#3C3C3C"
                 android:textSize="40sp"
                 android:textStyle="bold" />
 
@@ -346,7 +346,7 @@
                 android:layout_toLeftOf="@+id/habit5Percentage"
                 android:text="Get 8 hours of sleep"
 
-                android:textColor="#000000"
+                android:textColor="#3C3C3C"
 
 
                 android:textSize="20sp"
@@ -364,7 +364,7 @@
                 android:layout_marginRight="14dp"
                 android:layout_marginBottom="10dp"
                 android:text="40%"
-                android:textColor="#000000"
+                android:textColor="#3C3C3C"
                 android:textSize="40sp"
                 android:textStyle="bold" />
 

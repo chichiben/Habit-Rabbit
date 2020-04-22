@@ -1,5 +1,6 @@
 package com.example.habitrabbit
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.Window
@@ -13,6 +14,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -41,12 +43,12 @@ class MainActivity : AppCompatActivity() {
             return@setOnNavigationItemSelectedListener when (item.itemId) {
                 R.id.navigation_createTask -> {
                     println(("Create Task"));
-                    // setContentView(VIEW HERE)
+                    super.onBackPressed();
                     true
                 }
                 R.id.navigation_progress -> {
                     println(("Progress"));
-                    // setContentView(VIEW HERE)
+                    setContentView(R.layout.fragment_progress)
                     true
                 }
                 R.id.navigation_profile -> {
