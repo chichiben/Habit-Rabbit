@@ -1,10 +1,12 @@
 package com.example.habitrabbit
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.Window
 import android.view.WindowManager
+import android.widget.ImageButton
 import android.widget.RelativeLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -59,5 +61,12 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+
+        val button = findViewById<ImageButton>(R.id.add_habit)
+            button.setOnClickListener {
+                println(("add habit button is clicked!"));
+                val intent = Intent(this, HabitCreation::class.java)
+                startActivity(intent)
+            }
     }
 }
