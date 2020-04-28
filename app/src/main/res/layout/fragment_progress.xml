@@ -68,7 +68,7 @@
                             tools:layout_editor_absoluteY="93dp" />
 
                         <ImageView
-                            android:id="@+id/imageView2"
+                            android:id="@+id/carrotsHarvested"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="15dp"
