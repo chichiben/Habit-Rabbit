@@ -3,23 +3,20 @@ package com.example.habitrabbit
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.view.MenuItem
 import android.view.Window
 import android.view.WindowManager
-import android.widget.ImageButton
-import android.widget.RelativeLayout
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.habitrabbit.ui.ProgressFragment
+import com.example.habitrabbit.ui.habits.HabitsFragment
 import com.example.habitrabbit.ui.home.HomeFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("WrongViewCast")
@@ -41,13 +38,39 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
 
-        // Setting listener for button press on the first habit.
-        val habitButton = findViewById<RelativeLayout>(R.id.habit1)
-        habitButton.setOnClickListener{
-            val habitSelectIntent = Intent(this, HabitSelect::class.java)
-            startActivity(habitSelectIntent)
-            //setContentView(R.layout.fragment_habit)
+        val root = findViewById<LinearLayout>(R.id.linearlayout);
+        var count = 0;
+        var habitButtons: ArrayList<RelativeLayout> = arrayListOf()
+        for (i in 0 until root.childCount){
+            val view = root.getChildAt(i);
+            if (view is RelativeLayout){
+                val habitID = view.context.resources.getResourceEntryName(view.id)
+                val idNum = habitID.substring(5, habitID.length).toInt()
+                // Setting listener for button press.
+                val resID = resources.getIdentifier(habitID, "id", packageName)
+                habitButtons.add(findViewById<RelativeLayout>(resID));
+                habitButtons[idNum-1].setOnClickListener{
+                    var messageID = resources.getIdentifier("habit" + idNum + "Text", "id", packageName)
+                    var message = findViewById<TextView>(messageID).text
+                    var percentID = resources.getIdentifier("habit" + idNum + "Percentage", "id", packageName)
+                    var percent = findViewById<TextView>(percentID).text
+                    println("habit" + idNum + "Text")
+                    println(message)
+                    println(percent)
+                    var habitSelectIntent = Intent(this, HabitSelect::class.java).apply {
+                        putExtra("Title", message.toString())
+                        putExtra("Percent", percent.toString())
+                        putExtra("ID", idNum)
+                    }
+                    println((habitSelectIntent))
+                    startActivity(habitSelectIntent)
+                    //setContentView(R.layout.fragment_habit)
+                }
+            }
         }
+
+
+
 
         // Setting listeners for the bottom nav panel.
         navView.setOnNavigationItemSelectedListener { item: MenuItem ->
