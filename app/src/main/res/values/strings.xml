@@ -9,4 +9,6 @@
     <string name="checkin_number">#</string>
     <string name="username_shared">Username</string>
     <string name="habit_creation">habit_creation</string>
+    <string name="habit_select" />
+    <string name="progress" />
 </resources>

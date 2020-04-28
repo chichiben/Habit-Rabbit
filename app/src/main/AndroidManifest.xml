@@ -20,8 +20,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HabitCreation"
-            android:label="@string/habit_creation">
+        android:name=".HabitCreation"
+        android:label="@string/habit_creation">
+
+    </activity>
+        <activity
+            android:name=".HabitSelect"
+            android:label="@string/habit_select">
 
         </activity>
     </application>

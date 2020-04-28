@@ -12,6 +12,10 @@ import com.example.habitrabbit.R
 
 class HomeFragment : Fragment() {
 
+    companion object {
+        fun newInstance() = HomeFragment()
+    }
+
     private lateinit var homeViewModel: HomeViewModel
 
     override fun onCreateView(

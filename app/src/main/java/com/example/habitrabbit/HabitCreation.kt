@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Switch
 import androidx.appcompat.app.AppCompatActivity
+import com.example.habitrabbit.R.layout.fragment_habit
 import com.example.habitrabbit.R.layout.habit_creation
 import com.google.android.material.textfield.TextInputEditText
 

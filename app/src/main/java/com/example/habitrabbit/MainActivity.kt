@@ -10,10 +10,16 @@ import android.widget.ImageButton
 import android.widget.RelativeLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.habitrabbit.ui.ProgressFragment
+import com.example.habitrabbit.ui.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("WrongViewCast")
@@ -34,28 +40,35 @@ class MainActivity : AppCompatActivity() {
         )
         navView.setupWithNavController(navController)
 
+
         // Setting listener for button press on the first habit.
         val habitButton = findViewById<RelativeLayout>(R.id.habit1)
         habitButton.setOnClickListener{
-            setContentView(R.layout.fragment_habit)
+            val habitSelectIntent = Intent(this, HabitSelect::class.java)
+            startActivity(habitSelectIntent)
+            //setContentView(R.layout.fragment_habit)
         }
 
         // Setting listeners for the bottom nav panel.
         navView.setOnNavigationItemSelectedListener { item: MenuItem ->
             return@setOnNavigationItemSelectedListener when (item.itemId) {
                 R.id.navigation_createTask -> {
-                    println(("Create Task"));
-                    super.onBackPressed();
+                    println(("Habits"));
+                    val homeFragment = HomeFragment.newInstance()
+                    openFragment(homeFragment)
                     true
                 }
                 R.id.navigation_progress -> {
-                    println(("Progress"));
-                    setContentView(R.layout.fragment_progress)
+                    println("Progress")
+                    val progressFragment = ProgressFragment.newInstance()
+                    openFragment(progressFragment)
+
+
                     true
                 }
                 R.id.navigation_profile -> {
                     println(("Profile"));
-                    // setContentView(VIEW HERE)
+                    // TODO
                     true
                 }
                 else -> false
@@ -68,5 +81,12 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, HabitCreation::class.java)
                 startActivity(intent)
             }
+    }
+
+    private fun openFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.container, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 }

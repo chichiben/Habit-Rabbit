@@ -28,14 +28,14 @@ class HabitsFragment : Fragment() {
 
 
         // Trying to get the "X" button to return to the home screen. not working atm
-        /*
+
         val currentView = inflater.inflate(R.layout.fragment_habit, container, false)
         val closeHabitButton = currentView.findViewById<RelativeLayout>(R.id.closeHabitButton)
         closeHabitButton.setOnClickListener{
             activity?.onBackPressed()
             println("test")
         }
-        */
+
 
         return root
     }
