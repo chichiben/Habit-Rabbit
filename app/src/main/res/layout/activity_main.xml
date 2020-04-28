@@ -61,7 +61,7 @@
                 android:layout_marginBottom="10dp"
                 android:text="@string/habits"
                 android:textColor="#3C3C3C"
-                android:textSize="50sp"
+                android:textSize="60sp"
                 android:textStyle="bold" />
 
             <ImageButton
