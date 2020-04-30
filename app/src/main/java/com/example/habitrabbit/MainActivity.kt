@@ -10,9 +10,11 @@ import android.view.WindowManager
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import com.example.habitrabbit.ui.ProfileFragment
 import com.example.habitrabbit.ui.ProgressFragment
 import com.example.habitrabbit.ui.habits.HabitsFragment
 import com.example.habitrabbit.ui.home.HomeFragment
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity() {
             )
         )
         navView.setupWithNavController(navController)
+        navView.setItemIconSize(128)
 
 
         val root = findViewById<LinearLayout>(R.id.linearlayout);
@@ -85,13 +88,12 @@ class MainActivity : AppCompatActivity() {
                     println("Progress")
                     val progressFragment = ProgressFragment.newInstance()
                     openFragment(progressFragment)
-
-
                     true
                 }
                 R.id.navigation_profile -> {
                     println(("Profile"));
-                    // TODO
+                    val profileFragment = ProfileFragment.newInstance()
+                    openFragment(profileFragment)
                     true
                 }
                 else -> false
@@ -107,7 +109,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun openFragment(fragment: Fragment) {
+        val activeFragment = supportFragmentManager.findFragmentById(R.id.container)
+
         val transaction = supportFragmentManager.beginTransaction()
+        if (activeFragment == null) {
+            transaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
+        } else {
+            if (activeFragment!!::class != fragment::class) {
+                transaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
+            }
+        }
+
+
         transaction.replace(R.id.container, fragment)
         transaction.addToBackStack(null)
         transaction.commit()
