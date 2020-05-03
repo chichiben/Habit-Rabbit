@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         )
         navView.setupWithNavController(navController)
         navView.setItemIconSize(128)
+        navView.setBackgroundColor(0)
 
 
         val root = findViewById<LinearLayout>(R.id.linearlayout);
