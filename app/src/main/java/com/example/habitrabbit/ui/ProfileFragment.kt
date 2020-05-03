@@ -45,7 +45,7 @@ class DemoCollectionPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapte
     override fun getCount(): Int  = 2
 
     override fun getItem(i: Int): Fragment {
-        val fragment = DemoObjectFragment()
+        val fragment = DemoObjectFragment(i)
         fragment.arguments = Bundle().apply {
             // Our object is just an integer :-P
             putInt(ARG_OBJECT, i + 1)
@@ -54,7 +54,7 @@ class DemoCollectionPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapte
     }
 
     override fun getPageTitle(position: Int): CharSequence {
-        if (position == 1) {
+        if (position == 0) {
             return "DETAILS"
         } else {
             return "HISTORY"
@@ -66,18 +66,28 @@ private const val ARG_OBJECT = "object"
 
 // Instances of this class are fragments representing a single
 // object in our collection.
-class DemoObjectFragment : Fragment() {
+class DemoObjectFragment(private val position: Int) : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
-        return inflater.inflate(R.layout.fragment_progress, container, false)
+        return if (position == 0) {
+            println("Profile Details Page")
+            inflater.inflate(R.layout.fragment_profile_details, container, false)
+
+        } else {
+            println("Profile History Page")
+            inflater.inflate(R.layout.fragment_profile_history, container, false)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        /*
         arguments?.takeIf { it.containsKey(ARG_OBJECT) }?.apply {
             val textView: TextView = view.findViewById(R.id.title2)
             textView.text = getInt(ARG_OBJECT).toString()
         }
+        */
+
     }
 }
